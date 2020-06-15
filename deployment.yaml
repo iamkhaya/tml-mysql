@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: thumela
+  labels:
+    app: thumela
+
+spec:
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: thumela
+    spec:
+      imagePullSecrets:
+        - name: gcr-json-key-tml
+      containers:
+      - name: tml-app
+        env:
+        - name: ROLE
+          value: {{ .Values.env.role }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.ports.containerPort }}
+        command:
+          - uwsgi
+          - --ini-paste
+          - "/usr/local/tml/tml-api/thumela/config/pyramid/dev.ini"

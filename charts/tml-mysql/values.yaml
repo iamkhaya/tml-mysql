@@ -1,0 +1,18 @@
+ingress:
+  vhost: tml-api.kubernetes.env
+
+labels:
+  environment: staging
+  framework: pyramid
+  repo: https://github.com/iamkhaya/tml-api
+  task: service
+  team: tml-backend
+replicas: 1
+env:
+  role: STAGING
+image:
+  repository: eu.gcr.io/thumela-265921
+  tag: master
+  pullPolicy: Always
+ports:
+  containerPort: 8000
