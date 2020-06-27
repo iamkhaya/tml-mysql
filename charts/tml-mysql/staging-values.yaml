@@ -6,7 +6,7 @@ labels:
   team: tml-backend
 replicas: 1
 env:
-  role: DEV
+  role: STAGING
 image:
   repository: eu.gcr.io/thumela-265921
   tag: master

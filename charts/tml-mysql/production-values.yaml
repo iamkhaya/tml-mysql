@@ -1,12 +1,12 @@
 labels:
-  environment: staging
+  environment: production
   framework: mysql
   repo: https://github.com/iamkhaya/tml-mysql
   task: service
   team: tml-backend
 replicas: 1
 env:
-  role: DEV
+  role: PRODUCTION
 image:
   repository: eu.gcr.io/thumela-265921
   tag: master

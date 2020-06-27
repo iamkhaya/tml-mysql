@@ -2,7 +2,7 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: mysql
+  name: tml-mysql
 spec:
   selector:
     matchLabels:
@@ -25,7 +25,7 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: password
         ports:
-        - containerPort: 3306
+        - containerPort: {{ .Values.ports.containerPort }}
           name: mysql
         volumeMounts:
         - name: mysql-persistent-storage
