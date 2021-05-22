@@ -15,7 +15,7 @@ spec:
         app: mysql
     spec:
       imagePullSecrets:
-        - name: gcr-json-key-tml
+        - name: do-registry
       containers:
       - image: "{{ .Values.image.repository }}/tml-mysql:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}

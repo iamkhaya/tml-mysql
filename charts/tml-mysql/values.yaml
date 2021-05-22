@@ -8,8 +8,8 @@ replicas: 1
 env:
   role: DEV
 image:
-  repository: eu.gcr.io/thumela-265921
+  repository: registry.digitalocean.com/tml-container-registry
   tag: master
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 ports:
   containerPort: 3306
